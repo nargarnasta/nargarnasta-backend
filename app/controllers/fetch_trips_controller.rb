@@ -4,5 +4,6 @@ class FetchTripsController < ApplicationController
   	destination 		= params['destinationId']
   	fetched_data 		= FetchExternalData.call(origin: origin, destination: destination)
   	@filtered_data 	= FilterExternalData.call(fetched_data)
+  	render status: :success
   end
 end
